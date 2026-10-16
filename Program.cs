@@ -250,7 +250,7 @@ List<Pet> pets = [
         Name = "Kenzo",
         Species = "hörcsög",
         BirthYear = 2020,
-        FavFoods = ["ubprka", "paradicsom"],
+        FavFoods = ["uborka", "paradicsom"],
         Gender = true,
     },
     new()
