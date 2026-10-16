@@ -264,3 +264,53 @@ List<Pet> pets = [
     },
 ];
 #endregion
+
+// sorozatszámítás (összegzés --> átlag)     SUM()   
+// megszámlálás                              COUNT()
+// szélsőérték helymeghatározás (min, max)   MIN(). MAX()
+
+// eldöntés                                  ANY(), ALL(),
+// kiválasztás                               
+// lineáris keresés                            
+
+// rendezés(ek)                              ORDER BY
+// másolás                                   SELECT
+// kiválogatás                               WHERE
+// szétválogatás ('csoportosítás')           GROUP BY
+
+// [halmaztételek (unió, metszet, különbség...)]
+
+#region ipmeratív vs. deklaratív
+//IMPERATÍV (hogyan???)
+//int c = 0;
+//for (int i = 0; i < pets.Count; i++)
+//{
+//    if (pets[i].Species == "macska")
+//    {
+//        c++;
+//    }
+//}
+//Console.WriteLine($"output: {c}");
+
+//DEKLARATÍV (mit???)
+//SELECT COUNT(*) AS [output]
+//FROM pets
+//WHERE species LIKE 'macska';
+#endregion
+
+// .NET LINQ (Language INtegrated Querry)
+
+//összegzés
+
+var sum = pets.Sum(x => x.Age);
+Console.WriteLine($"kommulatív életkor: {sum}");
+
+var count = pets.Count(x => x.Species == "hörcsög");
+Console.WriteLine($"hörcsögök száma: {count}");
+
+var maxby = pets.MaxBy(x => x.Age);
+Console.WriteLine($"a legöregebb állat: {maxby.Name}, kora: {maxby.Age}");
+
+//minby, min, max
+
+//eldöntés/keresés/kiválasztás ->>>
